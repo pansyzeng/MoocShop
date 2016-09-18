@@ -1,0 +1,59 @@
+## 慕课商城
+
+数据库结构如图:
+![屏幕快照 2016-09-18 20.06.31.png](http://upload-images.jianshu.io/upload_images/1767852-10d3e89250ce9ddd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![屏幕快照 2016-09-18 20.06.08.png](http://upload-images.jianshu.io/upload_images/1767852-97227c8f64172857.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+建表语句:
+```
+DROP TABLE IF EXISTS `imooc_admin`;
+CREATE TABLE `imooc_admin`(
+	id TINYINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(30) NOT NULL,
+	password VARCHAR(60) NOT NULL,
+	email VARCHAR(60) NOT NULL
+);
+DROP TABLE IF EXISTS `imooc_cate`;
+CREATE TABLE `imooc_cate`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	cName VARCHAR(30) NOT NULL
+);
+
+DROP TABLE IF EXISTS`imooc_pro`;
+CREATE TABLE `imooc_pro`(
+	id SMALLINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	pName VARCHAR(255) NOT NULL,
+	cId INT UNSIGNED NOT NULL,
+	pSn VARCHAR(50) NOT NULL,
+	pNum INT UNSIGNED NOT NULL DEFAULT 0,
+	mPrice DECIMAL(10,2) NOT NULL,
+	iPrice DECIMAL(10,2) NOT NULL,
+	pDesc MEDIUMTEXT,
+	pImg VARCHAR(255) NOT NULL,
+	pubTime INT UNSIGNED NOT NULL,
+	isShow TINYINT(1) NOT NULL DEFAULT 1,
+	isHot TINYINT(1) NOT NULL DEFAULT 0
+);
+DROP TABLE IF EXISTS `imooc_user`;
+CREATE TABLE `imooc_user`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(30) NOT NULL,
+	password CHAR(60) NOT NULL,
+	sex ENUM("男","女","保密") DEFAULT "男" NOT NULL,
+	email VARCHAR(60) NOT NULL,
+	face VARCHAR(50) NOT NULL,
+	regTime INT UNSIGNED NOT NULL,
+	activeFlag TINYINT(1) DEFAULT 0 NOT NULL
+);
+DROP TABLE IF EXISTS `imooc_album`;
+CREATE TABLE `imooc_album`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	Pid INT UNSIGNED NOT NULL,
+	albumPath VARCHAR(50)
+);
+
+```
+
+
+
