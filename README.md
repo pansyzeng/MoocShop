@@ -3,6 +3,7 @@
 数据库结构如图:
 ![屏幕快照 2016-09-18 20.06.31.png](http://upload-images.jianshu.io/upload_images/1767852-10d3e89250ce9ddd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+
 ![屏幕快照 2016-09-18 20.06.08.png](http://upload-images.jianshu.io/upload_images/1767852-97227c8f64172857.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 建表语句:
